@@ -9,14 +9,22 @@ output:
 ## Loading and preprocessing the data
 
 ```{r}
-testvar <- 54
-testvar
-```
+library(data.table)
 
+data <- read.csv('activity.csv')
+data_clear <- na.omit(data)
+
+```
 
 ## What is mean total number of steps taken per day?
 
+```{r}
 
+data_table <- data.table(data_clear)
+data_by_date <- as.data.frame(data_table[, list(daily_mean =mean(steps),daily_median =median(steps)),by=date])
+data_by_date
+
+```
 
 ## What is the average daily activity pattern?
 
