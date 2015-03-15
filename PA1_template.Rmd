@@ -22,7 +22,11 @@ data_clear <- na.omit(data)
 
 data_table <- data.table(data_clear)
 data_by_date <- as.data.frame(data_table[, list(daily_mean =mean(steps),daily_median =median(steps)),by=date])
+
+hist(data_by_date$daily_mean)
+
 data_by_date
+
 
 ```
 

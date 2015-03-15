@@ -23,6 +23,13 @@ data_clear <- na.omit(data)
 ```r
 data_table <- data.table(data_clear)
 data_by_date <- as.data.frame(data_table[, list(daily_mean =mean(steps),daily_median =median(steps)),by=date])
+
+hist(data_by_date$daily_mean)
+```
+
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+
+```r
 data_by_date
 ```
 
